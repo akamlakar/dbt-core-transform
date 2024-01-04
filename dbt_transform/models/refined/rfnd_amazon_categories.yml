@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: rfnd_amazon_categories
+    description: "Refined table for Amazon categories."
+    columns:
+      - name: category_id
+        description: "Unique identifier for the category."
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+        description: "Name of the category after initial capitalization and trimming."
+        tests:
+          - not_null
+      - name: etl_load_date
+        description: "ETL column for Load Date."
+        tests:
+          - not_null

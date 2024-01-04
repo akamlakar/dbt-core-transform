@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_product_reviews
+    description: "This table contains product reviews and ratings."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - unique
+          - not_null
+      - name: stars
+        description: "Rating of the product."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              max_value: 5
+      - name: review_count
+        description: "Number of reviews for the product."
+        tests:
+          - dbt_expectations.expect_column_median_to_be_between:
+              min_value: 0
+              max_value: 10000

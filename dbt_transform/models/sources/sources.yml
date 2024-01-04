@@ -1,0 +1,5 @@
+sources:
+  - name: raw
+    tables:
+      - name: amazon_products
+      - name: amazon_categories

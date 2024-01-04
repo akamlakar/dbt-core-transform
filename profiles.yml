@@ -1,0 +1,12 @@
+dbt_transform:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: user
+      password: password
+      port: 5432
+      dbname: "poc_db" # or database instead of dbname
+      schema: refined
+      threads: 1

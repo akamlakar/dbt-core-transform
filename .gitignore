@@ -1,0 +1,4 @@
+dbt-env/
+data/*
+dbt_transform/*.py
+misc

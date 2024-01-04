@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_product_base
+    description: "This table contains basic product details."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Name of the product."
+        tests:
+          - not_null
+      - name: imgUrl
+        description: "Image URL for the product."
+      - name: productURL
+        description: "Product URL."
+        tests:
+          - not_null
+      - name: price
+        description: "Price of the product."
+        tests:
+          - dbt_expectations.expect_column_median_to_be_between:
+              min_value: 0
+              max_value: 10000
+      - name: listPrice
+        description: "List price of the product."
+        tests:
+          - dbt_expectations.expect_column_median_to_be_between:
+              min_value: 0
+              max_value: 10000
+      - name: category_id
+        description: "Category ID for the product."
+        tests:
+          - not_null

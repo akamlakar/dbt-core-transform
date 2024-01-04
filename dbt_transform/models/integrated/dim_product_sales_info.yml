@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_product_sales_info
+    description: "This table contains sales information of the product."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - unique
+          - not_null
+      - name: isBestSeller
+        description: "Flag indicating if the product is a bestseller."
+      - name: boughtInLastMonth
+        description: "Number of units bought in the last month."
+        tests:
+          - dbt_expectations.expect_column_median_to_be_between:
+              min_value: 0
+              max_value: 10000

@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: rfnd_amazon_products
+    description: "Transformed model for Amazon products with refined data."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Name of the product with the first letter of each word capitalized."
+        tests:
+          - not_null
+
+      - name: imgurl
+        description: "URL for the product's image."
+
+      - name: producturl
+        description: "URL for the product's page."
+
+      - name: stars
+        description: "Average star rating for the product."
+
+      - name: review_count
+        description: "Total count of reviews for the product."
+        tests:
+          - not_null
+
+      - name: price
+        description: "Current price of the product. Negative prices are set to 0."
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+
+      - name: listprice
+        description: "Listed price of the product."
+
+      - name: category_id
+        description: "Category identifier for the product."
+        tests:
+          - not_null
+
+      - name: isbestseller
+        description: "Indicator whether the product is a bestseller or not."
+
+      - name: boughtinlastmonth
+        description: "Indicator whether the product was bought in the last month or not."
+
+      - name: etl_load_date
+        description: "ETL column for Load Date."
+        tests:
+          - not_null
+
