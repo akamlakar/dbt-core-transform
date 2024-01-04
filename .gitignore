@@ -1,4 +1,5 @@
 dbt-env/
-data/*
+data/*.csv
+data/*.gz
 dbt_transform/*.py
 misc
