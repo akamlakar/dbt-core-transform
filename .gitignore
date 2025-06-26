@@ -1,4 +1,4 @@
-dbt-env/
+dbt-venv/
 data/*.csv
 data/*.gz
 dbt_transform/*.py
