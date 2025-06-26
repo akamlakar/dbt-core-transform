@@ -143,3 +143,39 @@ dbt test --model tag:DIM
 ## Click below for other dbt Packages
 
 **[dbt Packages](https://hub.getdbt.com/)**
+
+## 🎓 Learning DBT with this Project
+
+This project is designed as a learning resource for those new to dbt. Here's how to get the most out of it:
+
+### Additional Learning Resources
+
+- **[LEARNING_PATH.md](./LEARNING_PATH.md)**: A step-by-step guide for beginners to work through this project
+- **[DBT_GLOSSARY.md](./DBT_GLOSSARY.md)**: Definitions of key dbt terms and concepts used in this project
+- **[EXERCISES.md](./EXERCISES.md)**: Hands-on exercises to practice dbt concepts
+- **[DATA_FLOW.md](./DATA_FLOW.md)**: Visual representation of the data transformation pipeline
+
+### Getting Started for GitHub Users
+
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/dbt-core-transform.git
+   cd dbt-core-transform
+   ```
+
+2. **Set up your environment**:
+   - Follow the Python Virtual Environment Setup section above
+   - Start Docker containers with `docker-compose up -d`
+   - Configure your profiles.yml file (use the provided example as a template)
+
+3. **Follow the learning path**:
+   - Start with the LEARNING_PATH.md document
+   - Review the DATA_FLOW.md to understand the architecture
+   - Complete exercises in EXERCISES.md to practice concepts
+
+4. **Join the Community**:
+   - [dbt Community Slack](https://community.getdbt.com/)
+   - [dbt Discourse Forum](https://discourse.getdbt.com/)
+   - [dbt Learn Resources](https://courses.getdbt.com/collections)
+
+Happy learning!
